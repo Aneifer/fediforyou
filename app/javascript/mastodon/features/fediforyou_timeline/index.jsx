@@ -26,7 +26,7 @@ import StatusListContainer from '../ui/containers/status_list_container';
 
 import { ColumnSettings } from '../home_timeline/components/column_settings';
 import { CriticalUpdateBanner } from '../home_timeline/components/critical_update_banner';
-+ import { Announcements } from '../home_timeline/components/announcements';
+import { Announcements } from '../home_timeline/components/announcements';
 
 const timelineId = 'fediforyou';
 
