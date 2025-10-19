@@ -25,7 +25,7 @@ import ColumnHeader from '../../components/column_header';
 import StatusListContainer from '../ui/containers/status_list_container';
 
 import { ColumnSettings } from './components/column_settings';
-import { CriticalUpdateBanner } from './components/critical_update_banner';
+import { CriticalUpdateBanner } from '../home_timeline/components/critical_update_banner';
 import { Announcements } from './components/announcements';
 
 const timelineId = 'fediforyou';
@@ -173,7 +173,7 @@ class FediForYouTimeline extends PureComponent {
             prepend={banners}
             alwaysPrepend
             trackScroll={!pinned}
-            scrollKey={`home_timeline-${columnId}`}
+            scrollKey={`fedirforyou-${columnId}`}
             onLoadMore={this.handleLoadMore}
             timelineId='home'
             emptyMessage={<FormattedMessage id='empty_column.home' defaultMessage='Your home timeline is empty! Follow more people to fill it up.' />}
