@@ -4,6 +4,12 @@ import { PureComponent } from 'react';
 import { defineMessages, injectIntl, FormattedMessage } from 'react-intl';
 
 import classNames from 'classnames';
+
+import { ColumnSettings }      from '../home_timeline/components/column_settings';
+import { CriticalUpdateBanner } from '../home_timeline/components/critical_update_banner';
+import { Announcements }        from '../home_timeline/components/announcements';
+
+
 import { Helmet } from 'react-helmet';
 
 import { connect } from 'react-redux';
@@ -23,10 +29,6 @@ import { expandHomeTimeline } from '../../actions/timelines';
 import Column from '../../components/column';
 import ColumnHeader from '../../components/column_header';
 import StatusListContainer from '../ui/containers/status_list_container';
-
-import { ColumnSettings } from '../home_timeline/components/column_settings';
-import { CriticalUpdateBanner } from '../home_timeline/components/critical_update_banner';
-import { Announcements } from '../home_timeline/components/announcements';
 
 const timelineId = 'fediforyou';
 
@@ -168,12 +170,15 @@ class FediForYouTimeline extends PureComponent {
           <ColumnSettings />
         </ColumnHeader>
 
+// TODO: switch to 'fediforyou' when backend endpoint & redux wiring are ready
+// const timelineId = 'fediforyou';
+
         {signedIn ? (
           <StatusListContainer
             prepend={banners}
             alwaysPrepend
             trackScroll={!pinned}
-            scrollKey={`fedirforyou-${columnId}`}
+            scrollKey={`fediforyou-${columnId}`}
             onLoadMore={this.handleLoadMore}
             timelineId='home'
             emptyMessage={<FormattedMessage id='empty_column.home' defaultMessage='Your home timeline is empty! Follow more people to fill it up.' />}
