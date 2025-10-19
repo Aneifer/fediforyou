@@ -81,6 +81,8 @@ import {
 import { ColumnsContextProvider } from './util/columns_context';
 import { focusColumn, getFocusedItemIndex, focusItemSibling } from './util/focusUtils';
 import { WrappedSwitch, WrappedRoute } from './util/react_router_helpers';
+import FediForYouTimeline from 'mastodon/features/fediforyou_timeline';
+
 
 // Dummy import, to make sure that <Status /> ends up in the application bundle.
 // Without this it ends up in ~8 very commonly used bundles.
@@ -172,7 +174,7 @@ class SwitchingColumnsArea extends PureComponent {
             <WrappedRoute path='/privacy-policy' component={PrivacyPolicy} content={children} />
             <WrappedRoute path='/terms-of-service/:date?' component={TermsOfService} content={children} />
 
-            <WrappedRoute path={['/home', '/timelines/home']} component={HomeTimeline} content={children} />
+            <WrappedRoute path={['/fediforyou', '/timelines/fediforyou']} component={FediForYouTimeline} content={children} />
             <Redirect from='/timelines/public' to='/public' exact />
             <Redirect from='/timelines/public/local' to='/public/local' exact />
             <WrappedRoute path='/public' exact component={Firehose} componentParams={{ feedType: 'public' }} content={children} />
